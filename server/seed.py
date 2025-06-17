@@ -17,17 +17,17 @@ with app.app_context():
     db.session.commit()
 
     # Create Restaurants
-    rest1 = Restaurant(name="Mama's Pizza", address="123 Main St")
-    rest2 = Restaurant(name="Tony's Pizza", address="456 Side Ave")
-    rest3 = Restaurant(name="Kiki's Pizza", address="789 Market Rd")
+    rest1 = Restaurant(name="Pizza Hut", address="123 Moi Avenue")
+    rest2 = Restaurant(name="Pizza Inn", address="Massai Market")
+    rest3 = Restaurant(name="Mama's Pizza", address="789 Village Market")
 
     db.session.add_all([rest1, rest2, rest3])
     db.session.commit()
 
     # Create RestaurantPizzas
-    rp1 = RestaurantPizza(price=10, pizza_id=pizza1.id, restaurant_id=rest1.id)
-    rp2 = RestaurantPizza(price=12, pizza_id=pizza2.id, restaurant_id=rest1.id)
-    rp3 = RestaurantPizza(price=9, pizza_id=pizza3.id, restaurant_id=rest2.id)
+    RestaurantPizza1 = RestaurantPizza(price=10, pizza_id=pizza1.id, restaurant_id=rest1.id)
+    RestaurantPizza2 = RestaurantPizza(price=12, pizza_id=pizza2.id, restaurant_id=rest1.id)
+    RestaurantPizza3 = RestaurantPizza(price=9, pizza_id=pizza3.id, restaurant_id=rest2.id)
 
-    db.session.add_all([rp1, rp2, rp3])
+    db.session.add_all([RestaurantPizza1, RestaurantPizza2, RestaurantPizza3])
     db.session.commit()

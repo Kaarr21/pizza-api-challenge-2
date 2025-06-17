@@ -5,8 +5,8 @@ from .config import Config
 
 # Importing controllers to register blueprints
 from .controllers.restaurant_controller import restaurant_bp
-from .controllers.pizza_controller import pizza_bp
-from .controllers.restaurant_pizza_controller import restaurant_pizza_bp
+from .controllers.pizza_controller import pizza_blueprint
+from .controllers.restaurant_pizza_controller import restaurant_pizza_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -16,9 +16,9 @@ def create_app():
     Migrate(app, db)
 
     # Register routes
-    app.register_blueprint(restaurant_bp)
-    app.register_blueprint(pizza_bp)
-    app.register_blueprint(restaurant_pizza_bp)
+    app.register_blueprint(restaurant_blueprint)
+    app.register_blueprint(pizza_blueprint)
+    app.register_blueprint(restaurant_pizza_blueprint)
 
     return app
 
