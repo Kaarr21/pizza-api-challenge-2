@@ -1,9 +1,9 @@
 from flask import Blueprint, jsonify, request
 from server.models import db, RestaurantPizza, Pizza, Restaurant
 
-restaurant_pizza_bp = Blueprint('restaurant_pizza_bp', __name__, url_prefix='/restaurant_pizzas')
+restaurant_pizza_blueprint = Blueprint('restaurant_pizza_blueprint', __name__, url_prefix='/restaurant_pizzas')
 
-@restaurant_pizza_bp.route('', methods=['POST'])
+@restaurant_pizza_blueprint.route('', methods=['POST'])
 def create_restaurant_pizza():
     data = request.get_json()
 

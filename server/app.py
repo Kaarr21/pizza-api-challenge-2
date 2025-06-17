@@ -4,7 +4,7 @@ from .models import db
 from .config import Config
 
 # Importing controllers to register blueprints
-from .controllers.restaurant_controller import restaurant_bp
+from .controllers.restaurant_controller import restaurant_blueprint
 from .controllers.pizza_controller import pizza_blueprint
 from .controllers.restaurant_pizza_controller import restaurant_pizza_blueprint
 
