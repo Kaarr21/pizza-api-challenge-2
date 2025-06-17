@@ -1,0 +1,119 @@
+{
+  "info": {
+    "name": "Pizza API Challenge",
+    "_postman_id": "pizza-api-collection-id",
+    "description": "Postman collection for testing Pizza Restaurant API Challenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "GET All Restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants"]
+        }
+      }
+    },
+
+    {
+      "name": "GET Restaurant by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants", "1"]
+        }
+      }
+    },
+
+    {
+      "name": "DELETE Restaurant by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants", "1"]
+        }
+      }
+    },
+
+    {
+      "name": "GET All Pizzas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/pizzas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["pizzas"]
+        }
+      }
+    },
+
+    {
+      "name": "POST Create RestaurantPizza (Valid)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 10,\n  \"pizza_id\": 1,\n  \"restaurant_id\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/restaurant_pizzas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurant_pizzas"]
+        }
+      }
+    },
+
+    {
+      "name": "POST Create RestaurantPizza (Invalid Price)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 35,\n  \"pizza_id\": 1,\n  \"restaurant_id\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/restaurant_pizzas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurant_pizzas"]
+        }
+      }
+    }
+
+  ]
+}
