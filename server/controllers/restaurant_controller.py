@@ -8,10 +8,10 @@ def get_restaurants():
     restaurants = Restaurant.query.all()
     return jsonify([
         {
-            'id': r.id,
-            'name': r.name,
-            'address': r.address
-        } for r in restaurants
+            'id': restaurant.id,
+            'name': restaurant.name,
+            'address': restaurant.address
+        } for restaurant in restaurants
     ])
 
 @restaurant_bp.route('/<int:id>', methods=['GET'])
@@ -26,10 +26,10 @@ def get_restaurant_by_id(id):
         'address': restaurant.address,
         'pizzas': [
             {
-                'id': rp.pizza.id,
-                'name': rp.pizza.name,
-                'ingredients': rp.pizza.ingredients
-            } for rp in restaurant.restaurant_pizzas
+                'id': RestaurantPizza.pizza.id,
+                'name': RestaurantPizza.pizza.name,
+                'ingredients':RestaurantPizza.pizza.ingredients
+            } for RestaurantPizza in restaurant.restaurant_pizzas
         ]
     })
 

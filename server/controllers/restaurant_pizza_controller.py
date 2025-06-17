@@ -21,13 +21,13 @@ def create_restaurant_pizza():
     if not pizza or not restaurant:
         return jsonify({'errors': ['Invalid restaurant or pizza ID']}), 400
 
-    rp = RestaurantPizza(price=price, pizza_id=pizza_id, restaurant_id=restaurant_id)
-    db.session.add(rp)
+    RestaurantPizza= RestaurantPizza(price=price, pizza_id=pizza_id, restaurant_id=restaurant_id)
+    db.session.add(RestaurantPizza)
     db.session.commit()
 
     return jsonify({
-        'id': rp.id,
-        'price': rp.price,
+        'id': RestaurantPizza.id,
+        'price': RestaurantPizza.price,
         'pizza_id': pizza.id,
         'restaurant_id': restaurant.id,
         'pizza': {

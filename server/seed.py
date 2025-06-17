@@ -2,7 +2,6 @@ from server.app import app
 from server.models import db, Restaurant, Pizza, RestaurantPizza
 
 with app.app_context():
-    print(" Seeding data...")
 
     # Clear tables first
     RestaurantPizza.query.delete()
@@ -10,7 +9,7 @@ with app.app_context():
     Pizza.query.delete()
 
     # Create Pizzas
-    pizza1 = Pizza(name="Boerwores", ingredients="Dough, Tomato Sauce, Cheese")
+    pizza1 = Pizza(name="Boerewores", ingredients="Dough, Tomato Sauce, Cheese")
     pizza2 = Pizza(name="Pepperoni", ingredients="Dough, Tomato Sauce, Cheese, Pepperoni")
     pizza3 = Pizza(name="Hawaiian", ingredients="Dough, Tomato Sauce, Cheese, Pineapple, Ham")
 
@@ -32,5 +31,3 @@ with app.app_context():
 
     db.session.add_all([rp1, rp2, rp3])
     db.session.commit()
-
-    print("✅ Done seeding!")
